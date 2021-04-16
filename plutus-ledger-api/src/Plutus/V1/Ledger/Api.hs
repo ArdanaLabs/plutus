@@ -186,7 +186,7 @@ evaluateScriptRestricting verbose params budget p args = swap $ runWriter @LogOu
     let (res, _, logs) =
             UPLC.runCek
                 (toBuiltinsRuntime model)
-                (UPLC.restricting $ PLC.ExRestrictingBudget budget)
+                (UPLC.restricting (PLC.ExRestrictingBudget budget))
                 (verbose == Verbose)
                 appliedTerm
 
